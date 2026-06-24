@@ -2,7 +2,7 @@
 
 ## Project Identity
 
-Project path: `/Users/ly/Documents/AI/deep-learning-practice`
+Project path: `<local project path>`
 
 Short description: Deep learning practice workspace for building a practical, code-first learning system toward AI / LLM work.
 
@@ -16,7 +16,6 @@ Build a repeatable learning workflow where each topic produces runnable code, ex
 - Previous deep learning study felt fragmented, so this workspace prioritizes small runnable experiments over broad course consumption.
 - Preferred learning route: code first, AI explanation, video only for stuck points, textbooks as reference.
 - Initial focus: training loop, softmax/cross entropy, PyTorch basics, MLP, overfitting, embeddings and similarity.
-- Remote Linux SSH alias for running experiments: `zj-56.33linux`.
 
 ## Working Habits For This Project
 
@@ -36,9 +35,8 @@ Build a repeatable learning workflow where each topic produces runnable code, ex
 
 - 2026-06-22: Created the project as a code-first deep learning practice workspace.
 - 2026-06-22: Chose PyTorch official basics plus AI-assisted explanation as the primary learning route; D2L and videos are references.
-- 2026-06-23: Recorded remote Linux SSH alias `zj-56.33linux` for conda/PyTorch experiment execution.
 - 2026-06-23: Completed conceptual walkthrough for `L001`; remote conda setup and experiment runs remain for the next session.
-- 2026-06-24: Ran `L001` learning-rate experiments on `zj-56.33linux`; observed slow convergence at `lr=0.0005`, stable baseline at `lr=0.05`, and divergence at `lr=1.0`.
+- 2026-06-24: Ran `L001` learning-rate experiments in a remote Linux environment; observed slow convergence at `lr=0.0005`, stable baseline at `lr=0.05`, and divergence at `lr=1.0`.
 
 ## Next Useful Actions
 
