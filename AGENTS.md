@@ -37,9 +37,9 @@ Build a repeatable learning workflow where each topic produces runnable code, ex
 - 2026-06-22: Chose PyTorch official basics plus AI-assisted explanation as the primary learning route; D2L and videos are references.
 - 2026-06-23: Completed conceptual walkthrough for `L001`; remote conda setup and experiment runs remain for the next session.
 - 2026-06-24: Ran `L001` learning-rate experiments in a remote Linux environment; observed slow convergence at `lr=0.0005`, stable baseline at `lr=0.05`, and divergence at `lr=1.0`.
+- 2026-06-24: Clarified why `MSELoss` fits the L001 regression task and how this differs from classification losses such as cross entropy.
 
 ## Next Useful Actions
 
-- Learn the mathematical form of `MSELoss` and why it fits linear regression.
 - Improve experiment repeatability by fixing model initialization and DataLoader shuffle seeds.
 - Start `L002: softmax 与交叉熵`.
