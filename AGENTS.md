@@ -38,8 +38,10 @@ Build a repeatable learning workflow where each topic produces runnable code, ex
 - 2026-06-23: Completed conceptual walkthrough for `L001`; remote conda setup and experiment runs remain for the next session.
 - 2026-06-24: Ran `L001` learning-rate experiments in a remote Linux environment; observed slow convergence at `lr=0.0005`, stable baseline at `lr=0.05`, and divergence at `lr=1.0`.
 - 2026-06-24: Clarified why `MSELoss` fits the L001 regression task and how this differs from classification losses such as cross entropy.
+- 2026-06-25: Started `L002: softmax 与交叉熵` with a manual logits experiment.
 
 ## Next Useful Actions
 
-- Improve experiment repeatability by fixing model initialization and DataLoader shuffle seeds.
-- Start `L002: softmax 与交叉熵`.
+- Run `python -m dl_practice.softmax_cross_entropy`.
+- Record how target probability changes `CrossEntropyLoss`.
+- Explain why `CrossEntropyLoss` expects logits rather than manually-softmaxed probabilities.
