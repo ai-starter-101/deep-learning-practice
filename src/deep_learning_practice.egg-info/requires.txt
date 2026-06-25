@@ -1,0 +1,8 @@
+torch
+numpy
+matplotlib
+scikit-learn
+
+[dev]
+jupyter
+pytest

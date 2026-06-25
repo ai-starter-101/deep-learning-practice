@@ -10,3 +10,4 @@ experiments/**/outputs/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !experiments/**/outputs/.gitkeep
+!experiments/**/outputs/result*
