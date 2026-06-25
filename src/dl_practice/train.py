@@ -15,10 +15,17 @@ def train_linear_regression(epochs: int = 80, lr: float = 0.05) -> dict[str, flo
         [160, 40],
         generator=torch.Generator().manual_seed(42),
     )
-    train_loader = DataLoader(train_set, batch_size=32, shuffle=True)
+
+    torch.manual_seed(42)
+    model = LinearRegressionModel()
+    train_loader = DataLoader(
+        train_set,
+        batch_size=32,
+        shuffle=True,
+        generator=torch.Generator().manual_seed(42),
+    )
     val_loader = DataLoader(val_set, batch_size=40)
 
-    model = LinearRegressionModel()
     loss_fn = nn.MSELoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 
@@ -55,5 +62,8 @@ def evaluate_loss(model: nn.Module, loader: DataLoader, loss_fn: nn.Module) -> f
 
 
 if __name__ == "__main__":
-    metrics = train_linear_regression()
+    epoch = 80
+    lr = 1
+    metrics = train_linear_regression(epoch, lr)
+    print("epoch:", epoch, "; lr:", lr, "\n")
     print(metrics)
