@@ -39,9 +39,9 @@ Build a repeatable learning workflow where each topic produces runnable code, ex
 - 2026-06-24: Ran `L001` learning-rate experiments in a remote Linux environment; observed slow convergence at `lr=0.0005`, stable baseline at `lr=0.05`, and divergence at `lr=1.0`.
 - 2026-06-24: Clarified why `MSELoss` fits the L001 regression task and how this differs from classification losses such as cross entropy.
 - 2026-06-25: Started `L002: softmax 与交叉熵` with a manual logits experiment.
+- 2026-06-25: Verified that target class logit advantage maps to higher softmax probability and lower cross entropy loss.
 
 ## Next Useful Actions
 
-- Run `python -m dl_practice.softmax_cross_entropy`.
-- Record how target probability changes `CrossEntropyLoss`.
 - Explain why `CrossEntropyLoss` expects logits rather than manually-softmaxed probabilities.
+- Try batch size greater than 1 for logits and targets.
