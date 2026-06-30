@@ -60,12 +60,13 @@
 - `CrossEntropyLoss` 应直接接收 logits，不应该先手动 softmax 后再传入。
 - 用真实的 `nn.Linear` 分类层时，输出仍然是 logits；经过 `CrossEntropyLoss -> backward -> optimizer.step` 后，loss 会下降、accuracy 会提升。
 - 最小分类训练循环可以把 6 个样本从初始 `0.3333` 准确率训练到 `1.0`。
+- 从数学上看，`CrossEntropyLoss(logits, target)` 和“手动 softmax -> log -> 取 target -> 取负号”是等价的；但在计算机实现上，`log_softmax + NLLLoss` 更稳定。
 
 ## 还不确定的问题
 
-- 为什么 `log_softmax + NLLLoss` 的数值实现比“手动 softmax 再取 log”更稳定。
+- `log_softmax + NLLLoss` 的核心代码细节还需要继续拆开理解。
 
 ## 下一步
 
-- 用自己的话解释为什么 “softmax 更适合观察，logits 更适合训练输入”。
-- 继续理解 `log_softmax + NLLLoss` 为什么比手动 `softmax -> log` 更稳定。
+- 看 `log_softmax + NLLLoss` 的核心代码路径，理解它为什么比手动 `softmax -> log` 更稳定。
+- 用更小的例子继续理解分类 loss 的底层实现。

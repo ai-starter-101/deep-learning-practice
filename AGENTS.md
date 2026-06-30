@@ -42,8 +42,9 @@ Build a repeatable learning workflow where each topic produces runnable code, ex
 - 2026-06-25: Verified that target class logit advantage maps to higher softmax probability and lower cross entropy loss.
 - 2026-06-30: Verified batch-shape semantics for classification and confirmed `CrossEntropyLoss` should receive logits rather than manually-softmaxed probabilities.
 - 2026-06-30: Extended `L002` to a minimal real classifier with `nn.Linear`, one-step gradient update, and a short training loop reaching `100%` accuracy on a tiny toy dataset.
+- 2026-06-30: Clarified that manual `softmax -> log` is mathematically equivalent to cross entropy, but `log_softmax + NLLLoss` is more numerically stable in implementation.
 
 ## Next Useful Actions
 
-- Explain in plain language why softmax is useful for inspection but logits are the right training input.
-- Explain why `log_softmax + NLLLoss` is more numerically stable than `softmax -> log`.
+- Read through the core `log_softmax + NLLLoss` implementation path to understand the stability trick more concretely.
+- Continue L002 with code-level understanding before moving on to the next topic.
