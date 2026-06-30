@@ -34,10 +34,11 @@
 - target 类别的 logit 相对其他类别高很多时，softmax 后 target 概率接近 1，loss 很低。
 - batch size 大于 1 时，`logits.shape == [batch_size, num_classes]`，`target.shape == [batch_size]`。
 - 直接传 logits 时的 loss 比“先手动 softmax 再传入”的 loss 更合理，说明 `CrossEntropyLoss` 期望输入 logits。
+- 用 `nn.Linear` 构造最小分类模型后，完整训练闭环已经跑通：初始 `loss=1.3848`、`accuracy=0.3333`，训练到 `epoch 80` 后 `final_loss=0.0511`、`final_accuracy=1.0`。
 
 ## 我修改了什么
 
-新增最小实验代码，用手写 logits 观察 softmax 概率和交叉熵 loss。
+新增最小实验代码，从手写 logits 逐步扩展到 batch shape、`nn.Linear` 前向、单步训练和最小分类训练循环。
 
 ## 反例 / 边界条件
 
@@ -57,6 +58,8 @@
 - 对分类任务来说，target 类别的相对优势越大，loss 越小。
 - batch 中 logits 和 target 的 shape 对应关系：每一行 logits 对应一个样本，每个 target 元素对应一个真实类别编号。
 - `CrossEntropyLoss` 应直接接收 logits，不应该先手动 softmax 后再传入。
+- 用真实的 `nn.Linear` 分类层时，输出仍然是 logits；经过 `CrossEntropyLoss -> backward -> optimizer.step` 后，loss 会下降、accuracy 会提升。
+- 最小分类训练循环可以把 6 个样本从初始 `0.3333` 准确率训练到 `1.0`。
 
 ## 还不确定的问题
 
@@ -65,4 +68,4 @@
 ## 下一步
 
 - 用自己的话解释为什么 “softmax 更适合观察，logits 更适合训练输入”。
-- 从手写 logits 过渡到一个真正的最小分类模型。
+- 继续理解 `log_softmax + NLLLoss` 为什么比手动 `softmax -> log` 更稳定。
