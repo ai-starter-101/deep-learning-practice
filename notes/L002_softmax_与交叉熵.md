@@ -61,5 +61,5 @@
 
 ## 下一步
 
-- 理解为什么 PyTorch 的 `CrossEntropyLoss` 要直接接收 logits，而不是 softmax 后的概率。
-- 尝试 batch size 大于 1 的 logits 和 target。
+- 运行 `run_batch_shape_demo()`，理解 `logits.shape == [batch_size, num_classes]`，`target.shape == [batch_size]`。
+- 运行 `run_logits_vs_probabilities_demo()`，观察把 logits 传给 `CrossEntropyLoss` 和先手动 softmax 后再传入的 loss 差异。
