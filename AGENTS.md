@@ -22,6 +22,7 @@ Build a repeatable learning workflow where each topic produces runnable code, ex
 - Read this file at the start of each new session.
 - Keep each learning unit small and numbered as `L001`, `L002`, etc.
 - Every completed learning unit should have runnable code, notes, experiment observations, and a Notion summary.
+- Use Notion database `https://app.notion.com/p/fd2bbfdc1ee2401c8b8a1d39fb991164?v=b231218b33a048649277d4f6de98aac8` for daily learning summaries.
 - Preserve unrelated user changes.
 - Prefer simple PyTorch examples before adding frameworks.
 
